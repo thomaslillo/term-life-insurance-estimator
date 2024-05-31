@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Term Life Insurance Cost Estimator</title>
+  <link rel="stylesheet" href="https://unpkg.com/xp.css@/dist/98.css">
+  <style>
+    body {
+      font-family: 'Tahoma', sans-serif;
+      background: #C0C0C0;
+      color: #000;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .sidebar {
+      width: 300px;
+      background: #008080;
+      padding: 10px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .content {
+      flex: 1;
+      padding: 20px;
+      background: #ffffff;
+      border: 1px solid #000;
+      margin: 20px;
+    }
+
+    header {
+      background: #000080;
+      color: #ffffff;
+      padding: 1em;
+      text-align: center;
+      font-size: 1.5em;
+    }
+
+    form {
+      background: #ffffff;
+      padding: 20px;
+      border: 1px solid #000;
+      margin: 20px 0;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 0.5em;
+    }
+
+    form input, form select {
+      width: calc(100% - 20px);
+      padding: 5px;
+      margin-bottom: 1em;
+    }
+
+    form input[type="submit"] {
+      background: #000080;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    form input[type="submit"]:hover {
+      background: #0000cd;
+    }
+
+    .link {
+      display: block;
+      text-align: center;
+      margin-top: 1em;
+    }
+
+    .info-section {
+      padding: 10px;
+      border: 1px solid #000;
+      background: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .info-section h3 {
+      background: #000080;
+      color: #ffffff;
+      padding: 5px;
+      margin: -10px -10px 10px -10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+    <header>
+    Term Life Insurance Cost Estimator
+    </header>
+
+    <div class="container">
+        <div class="sidebar">
+        <div class="info-section">
+            <p>Life Insurance isn't just for people old enough to have used Windows 98, it's an important consideration for young people too!</p>            
+        </div>
+        <div class="info-section">
+            <h3>What is Term Life Insurance?</h3>
+            <p>Term life insurance provides coverage for a specified period, typically 10, 20, or 30 years. If the insured person passes away during the term, the beneficiaries receive a death benefit.</p>
+        </div>
+        <div class="info-section">
+            <h3>Why Do You Need Term Life Insurance?</h3>
+            <p>Term life insurance is essential for providing financial security to your loved ones in case of your unexpected death. It can cover debts, living expenses, and future obligations.</p>
+        </div>
+        <div class="info-section">
+            <h3>How to Choose the Right Policy</h3>
+            <p>Consider factors such as your financial obligations, family needs, and future plans when choosing a term life insurance policy. It's crucial to get enough coverage to ensure your family's financial stability.</p>
+        </div>
+        <a href="resources.html" class="link">Resources and About This Tool</a>
+    </div>
+
+    <div class="content">
+      <form id="insurance-form">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label for="smoker">Smoker:</label>
+        <input type="radio" id="smoker_yes" name="smoker" value="yes" required>
+        <label for="smoker_yes">Yes</label>
+        <input type="radio" id="smoker_no" name="smoker" value="no" required>
+        <label for="smoker_no">No</label>
+
+        <label for="health">Health Status:</label>
+        <select id="health" name="health" required>
+          <option value="excellent">Excellent</option>
+          <option value="good">Good</option>
+          <option value="average">Average</option>
+          <option value="poor">Poor</option>
+        </select>
+
+        <label for="debt">Current Debt Load (in CAD):</label>
+        <input type="number" id="debt" name="debt" required>
+
+        <label for="income_growth">Future Income Potential (Annual Growth %):</label>
+        <input type="number" id="income_growth" name="income_growth" required>
+
+        <label for="dependents">Family Size (Number of Dependents):</label>
+        <input type="number" id="dependents" name="dependents" required>
+
+        <label for="household_income">Lifetime Earning Potential of Partners (Combined Annual Income in CAD):</label>
+        <input type="number" id="household_income" name="household_income" required>
+
+        <input type="submit" value="Calculate">
+      </form>
+
+      <div id="results"></div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('insurance-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      // Get form data
+      const age = document.getElementById('age').value;
+      const gender = document.getElementById('gender').value;
+      const smoker = document.querySelector('input[name="smoker"]:checked').value;
+      const health = document.getElementById('health').value;
+      const debt = document.getElementById('debt').value;
+      const incomeGrowth = document.getElementById('income_growth').value;
+      const dependents = document.getElementById('dependents').value;
+      const householdIncome = document.getElementById('household_income').value;
+
+      // Calculate coverage amount (example logic)
+      const coverageAmount = (householdIncome * 10) + parseFloat(debt);
+      
+      // Calculate premium (example logic)
+      let basePremium = 50; // base premium for calculation purposes
+      if (age > 50) basePremium += 50;
+      if (gender === 'female') basePremium -= 10;
+      if (smoker === 'yes') basePremium += 30;
+      if (health === 'poor') basePremium += 50;
+      
+      const estimatedPremiumMonthly = basePremium * (coverageAmount / 100000);
+      const estimatedPremiumAnnual = estimatedPremiumMonthly * 12;
+      
+      // Display results
+      document.getElementById('results').innerHTML = `
+        <h2>Estimated Coverage Amount: $${coverageAmount}</h2>
+        <p>Estimated Monthly Premium: $${estimatedPremiumMonthly.toFixed(2)}</p>
+        <p>Estimated Annual Premium: $${estimatedPremiumAnnual.toFixed(2)}</p>
+      `;
+    });
+  </script>
+</body>
+</html>
