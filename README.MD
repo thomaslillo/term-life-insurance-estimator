@@ -11,3 +11,5 @@ Life Insurance isn't just for people old enough to have used Windows 98, it's an
 
 - complete calculations research
 - convert calculator into windows 98 window with tabs
+- add more resources
+- add cool 98 icons 
