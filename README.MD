@@ -7,7 +7,7 @@ Life Insurance isn't just for people old enough to have used Windows 98, it's an
 - styles from: https://botoxparty.github.io/XP.css/#intro
 - Everything else is just HTML + JavaScript.
 
-## To Do:
+## To Do
 
 - complete calculations research
 - convert calculator into windows 98 window with tabs
