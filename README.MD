@@ -1,4 +1,4 @@
-# A Windows 98 Themed Term Life Insurance Estimator
+# Windows 98 Themed Term Life Insurance Estimator
 
 Life Insurance isn't just for people old enough to have used Windows 98, it's an important consideration for young people too!
 
