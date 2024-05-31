@@ -1,7 +1,11 @@
 # A Windows 98 Themed Term Life Insurance Estimator
 
+Life Insurance isn't just for people old enough to have used Windows 98, it's an important consideration for young people too!
+
 Built using the very neat:
 https://botoxparty.github.io/XP.css/#intro
+
+Everything else is just HTML + JavaScript.
 
 ## To Do:
 
