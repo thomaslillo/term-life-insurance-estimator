@@ -9,8 +9,8 @@ Life Insurance isn't just for people old enough to have used Windows 98, it's an
 
 ## Methodology
 
-https://www.policygenius.com/life-insurance/life-insurance-calculator/
-https://www.policygenius.com/life-insurance/how-much-life-insurance-do-i-need/
+- https://www.policygenius.com/life-insurance/life-insurance-calculator/
+- https://www.policygenius.com/life-insurance/how-much-life-insurance-do-i-need/
 
 ## To Do
 
